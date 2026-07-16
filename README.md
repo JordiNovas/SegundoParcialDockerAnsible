@@ -95,8 +95,6 @@ El playbook realiza las siguientes tareas:
 <img width="1112" height="381" alt="Captura de pantalla 2026-07-16 154626" src="https://github.com/user-attachments/assets/c7ba72e7-e821-4a63-a1e3-ae3e7c65760f" />
 
 
-Agregar aquí una captura de la ejecución exitosa del playbook.
-
 ```
 (ansible-playbook ejecutado correctamente)
 ```
