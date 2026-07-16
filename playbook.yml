@@ -1,0 +1,51 @@
+---
+- name: Laboratorio Ansible
+  hosts: docker
+  become: false
+
+  tasks:
+
+    - name: Obtener nombre del host
+      command: hostname
+      register: hostname_output
+
+    - name: Mostrar nombre del host
+      debug:
+        msg: "Servidor: {{ hostname_output.stdout }}"
+
+    - name: Obtener sistema operativo
+      command: cat /etc/os-release
+      register: os_info
+
+    - name: Mostrar sistema operativo
+      debug:
+        msg: "{{ os_info.stdout }}"
+
+    - name: Crear directorio principal
+      file:
+        path: /tmp/ansible-demo
+        state: directory
+        mode: '0755'
+
+    - name: Crear archivo info.txt
+      copy:
+        dest: /tmp/ansible-demo/info.txt
+        content: |
+          Servidor: {{ hostname_output.stdout }}
+          Sistema Operativo:
+          {{ os_info.stdout }}
+
+    - name: Crear directorios mediante loop
+      file:
+        path: "/tmp/ansible-demo/{{ item }}"
+        state: directory
+        mode: '0755'
+      loop:
+        - logs
+        - backup
+        - config
+
+    - name: Mostrar mensaje si es Ubuntu
+      debug:
+        msg: "Este servidor ejecuta Ubuntu."
+      when: "'Ubuntu' in os_info.stdout"
