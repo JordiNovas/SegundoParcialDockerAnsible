@@ -91,6 +91,10 @@ El playbook realiza las siguientes tareas:
 
 ## Captura de pantalla
 
+<img width="1919" height="1019" alt="Captura de pantalla 2026-07-16 154615" src="https://github.com/user-attachments/assets/1f28166f-0416-483e-994d-b5e832049e01" />
+<img width="1112" height="381" alt="Captura de pantalla 2026-07-16 154626" src="https://github.com/user-attachments/assets/c7ba72e7-e821-4a63-a1e3-ae3e7c65760f" />
+
+
 Agregar aquí una captura de la ejecución exitosa del playbook.
 
 ```
